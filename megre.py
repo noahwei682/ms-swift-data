@@ -54,7 +54,7 @@ json_files = [
 ]
 
 # Directory containing the JSON files
-directory = '/home/aiscuser/lmms-eval/msdata/msdata/split/qwen_file/'
+directory = '/home/zhangyulong/lmms-eval/llava-ov-ewc-ms/msdata/split/qwen_file/'
 
 # Initialize an empty list to hold all data
 merged_data = []
