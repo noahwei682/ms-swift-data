@@ -79,11 +79,11 @@ def process_file(input_path, output_path, image_dir):
 
 def main():
     parser = argparse.ArgumentParser(description="Convert JSON format for dataset")
-    parser.add_argument("--input_dir", default="/home/aiscuser/lmms-eval/msdata/msdata/split/split_small", 
+    parser.add_argument("--input_dir", default="/home/zhangyulong/lmms-eval/llava-ov-ewc-ms/msdata/split/split_small", 
                         help="Directory containing input JSON files")
-    parser.add_argument("--output_dir", default="/home/aiscuser/lmms-eval/msdata/msdata/split/qwen_file", 
+    parser.add_argument("--output_dir", default="/home/zhangyulong/lmms-eval/llava-ov-ewc-ms/msdata/split/qwen_file", 
                         help="Directory for output JSON files")
-    parser.add_argument("--image_dir", default="/home/aiscuser/lmms-eval/msdata/images/images", 
+    parser.add_argument("--image_dir", default="/home/zhangyulong/lmms-eval/llava-ov-ewc-ms/msdata/images/images", 
                         help="Directory containing images")
     parser.add_argument("--prefix", default="qwen_", help="Prefix to add to output filenames")
     
