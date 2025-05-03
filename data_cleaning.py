@@ -214,6 +214,7 @@ if __name__ == "__main__":
         # '/home/aiscuser/dataset/amazon/meta_Gift_Cards_dict_Store.json',
         # '/home/aiscuser/dataset/amazon/meta_Gift_Cards_dict_title.json',
         '/home/aiscuser/meta_Grocery_and_Gourmet_Food_dict.json',
+        '/home/aiscuser/meta_Grocery_and_Gourmet_Food_dict_title.json',
         # '/home/aiscuser/dataset/amazon/meta_Grocery_and_Gourmet_Food_dict_description.json',
         # '/home/aiscuser/dataset/amazon/meta_Grocery_and_Gourmet_Food_dict_feature.json',
         # '/home/aiscuser/dataset/amazon/meta_Grocery_and_Gourmet_Food_dict_main_category.json',
