@@ -6,6 +6,6 @@
 
 ### gzip -d *.jsonl.gz
 
-### prepare_dict.py
+### prepare_dict.py - prepare_dict_title.py
 
 ### data_cleaning.py
