@@ -29,4 +29,6 @@ huggingface-cli upload amazon-grpo meta_Musical_Instruments_dict_title_grpo.json
 huggingface-cli upload amazon-grpo meta_Office_Products_dict_title_grpo.json --repo-type dataset
 huggingface-cli upload amazon-grpo meta_Patio_Lawn_and_Garden_dict_title_grpo.json --repo-type dataset
 huggingface-cli upload amazon-grpo meta_Pet_Supplies_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo merged_data.json --repo-type dataset
+
 
