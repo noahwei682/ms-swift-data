@@ -18,6 +18,8 @@
 
 ### download.sh
 
+### revise_path.py
+
 # --------------transfer--------------
 
 ### convert_json_format.py
