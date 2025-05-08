@@ -1,51 +1,80 @@
+#!/usr/bin/env python3
 import json
-import glob
 import os
 
-def merge_json_files():
-    # Get all JSON files in the current directory
-    json_files = glob.glob('meta_*.json')
+def process_merged_data(file_path='/cpfs01/shared/llm_ddd/zhangyulong/sa_work/msdata/wei682/amazon-qwen-file/merged_data.json'):
+    """
+    Read and process the merged_data.json file.
     
-    # Initialize an empty list to store all data
-    all_data = []
+    Args:
+        file_path (str): Path to the merged_data.json file
+    """
+    # Check if the file exists
+    if not os.path.exists(file_path):
+        print(f"Error: File '{file_path}' not found.")
+        return
     
-    # Process each JSON file
-    for file_path in json_files:
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                if isinstance(data, list):
-                    # Transform each item to the new format
-                    for item in data:
-                        if 'conversations' in item:
-                            new_item = {
-                                "messages": [
-                                    {
-                                        "role": "user",
-                                        "content": item['conversations'][0]['value']
-                                    },
-                                    {
-                                        "role": "assistant",
-                                        "content": item['conversations'][1]['value']
-                                    }
-                                ],
-                                "images": [
-                                    f"/home/aiscuser/lmms-eval/llava-ov-ewc-ms/msdata/images/images/{item['image']}"
-                                ]
-                            }
-                            all_data.append(new_item)
-                else:
-                    print(f"Warning: {file_path} does not contain a JSON list")
-        except Exception as e:
-            print(f"Error processing {file_path}: {str(e)}")
+    # Read the JSON file
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except json.JSONDecodeError:
+        print(f"Error: '{file_path}' contains invalid JSON.")
+        return
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        return
     
-    # Write the merged data to a new file
-    output_file = 'merged_data.json'
+    # Print the number of records in the file
+    print(f"Successfully loaded {len(data)} records from {file_path}")
+    
+    # Update image paths
+    old_prefix = "/home/aiscuser/lmms-eval/llava-ov-ewc-ms/msdata/images/images/"
+    new_prefix = "/cpfs01/shared/llm_ddd/zhangyulong/sa_work/msdata/images/images/"
+    
+    updated_count = 0
+    for item in data:
+        if "images" in item and isinstance(item["images"], list):
+            for i, image_path in enumerate(item["images"]):
+                if image_path.startswith(old_prefix):
+                    item["images"][i] = image_path.replace(old_prefix, new_prefix)
+                    updated_count += 1
+    
+    print(f"\nUpdated {updated_count} image paths from '{old_prefix}' to '{new_prefix}'")
+    
+    # Save the updated data to a new file
+    output_file = '/cpfs01/shared/llm_ddd/zhangyulong/sa_work/msdata/wei682/amazon-qwen-file/updated_merged_data.json'   
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(all_data, f, ensure_ascii=False, indent=2)
+        json.dump(data, f, indent=4, ensure_ascii=False)
     
-    print(f"Successfully merged {len(json_files)} files into {output_file}")
-    print(f"Total number of items in merged file: {len(all_data)}")
+    print(f"Saved updated data to {output_file}")
+    
+    # Print sample of the data structure
+    if data:
+        print("\nSample data structure:")
+        for key in data[0].keys():
+            print(f"- {key}")
+    
+    # Analyze records
+    print("\nData analysis:")
+    
+    # Count records with messages
+    with_messages = sum(1 for item in data if "messages" in item)
+    print(f"Records with messages: {with_messages}")
+    print(f"Total records: {len(data)}")
+    
+    # Print first few messages
+    print("\nSample messages:")
+    for i, item in enumerate(data[:5]):  # First 5 records
+        if "messages" in item:
+            for msg in item["messages"]:
+                print(f"{i+1}. {msg['role']}: {msg['content'][:100]}...")
+    
+    return data
 
 if __name__ == "__main__":
-    merge_json_files() 
+    # Process the merged data file
+    data = process_merged_data()
+    
+    # Additional processing could be added here
+    print("\nScript completed successfully.") 
