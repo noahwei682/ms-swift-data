@@ -41,7 +41,7 @@ def process_merged_data(file_path='/cpfs01/shared/llm_ddd/zhangyulong/sa_work/ms
     print(f"\nUpdated {updated_count} image paths from '{old_prefix}' to '{new_prefix}'")
     
     # Save the updated data to a new file
-    output_file = "updated_" + file_path
+    output_file = '/cpfs01/shared/llm_ddd/zhangyulong/sa_work/msdata/wei682/amazon-qwen-file/updated_merged_data.json'   
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
     
