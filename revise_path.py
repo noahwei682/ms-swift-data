@@ -34,8 +34,8 @@ def process_merged_data(file_path='/cpfs01/shared/llm_ddd/zhangyulong/sa_work/ms
     
     updated_count = 0
     for item in data:
-        if "image_path" in item and item["image_path"].startswith(old_prefix):
-            item["image_path"] = item["image_path"].replace(old_prefix, new_prefix)
+        if "image_path" in item and item["images"].startswith(old_prefix):
+            item["image_path"] = item["images"].replace(old_prefix, new_prefix)
             updated_count += 1
     
     print(f"\nUpdated {updated_count} image paths from '{old_prefix}' to '{new_prefix}'")
