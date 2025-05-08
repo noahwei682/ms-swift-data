@@ -32,6 +32,38 @@ huggingface-cli upload amazon-grpo meta_Pet_Supplies_dict_title_grpo.json --repo
 huggingface-cli upload amazon-grpo merged_data.json --repo-type dataset
 
 
+huggingface-cli upload amazon-grpo-s merged_data.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_All_Beauty_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Amazon_Fashion_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Appliances_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Arts_Crafts_and_Sewing_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Automotive_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Baby_Products_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Beauty_and_Personal_Care_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Books_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_CDs_and_Vinyl_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Cell_Phones_and_Accessories_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Clothing_Shoes_and_Jewelry_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Digital_Music_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Electronics_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Gift_Cards_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Grocery_and_Gourmet_Food_dict_title.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Handmade_Products_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Health_and_Household_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Health_and_Personal_Care_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Home_and_Kitchen_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Industrial_and_Scientific_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Kindle_Store_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Magazine_Subscriptions_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Movies_and_TV_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Musical_Instruments_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Office_Products_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Patio_Lawn_and_Garden_dict_title_grpo.json --repo-type dataset
+huggingface-cli upload amazon-grpo-s meta_Pet_Supplies_dict_title_grpo.json --repo-type dataset
+
+
+
+
 
 
 huggingface-cli upload amazon-qwen-file merged_data.json --repo-type dataset
