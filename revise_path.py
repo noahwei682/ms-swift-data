@@ -2,7 +2,7 @@
 import json
 import os
 
-def process_merged_data(file_path='merged_data.json'):
+def process_merged_data(file_path='/cpfs01/shared/llm_ddd/zhangyulong/sa_work/msdata/wei682/amazon-qwen-file/merged_data.json'):
     """
     Read and process the merged_data.json file.
     
