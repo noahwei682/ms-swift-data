@@ -9,3 +9,7 @@ huggingface-cli download wei682/split_small --repo-type dataset --local-dir ./ms
 
 mkdir ./wei682/split_small_small
 huggingface-cli download wei682/split_small_small --repo-type dataset --local-dir ./msdata/split_small_small
+
+mkdir ./wei682/amazon-qwen-file
+huggingface-cli download wei682/amazon-qwen-file --repo-type dataset --local-dir ./wei682/amazon-qwen-file
+
